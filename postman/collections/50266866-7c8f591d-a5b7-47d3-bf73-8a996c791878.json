@@ -36,7 +36,7 @@
 			"name": "ProgramBatch",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "GetAllBatches",
 					"id": "50266866-b2005e00-f369-418c-a1aa-c9d4d4d900a6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
