@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "50266866-7c8f591d-a5b7-47d3-bf73-8a996c791878",
+		"name": "Team6_ApiHackathon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UserLoginControler",
+			"item": [
+				{
+					"name": "UserSignIn",
+					"id": "50266866-502608f5-9b82-44af-bfbe-7605b6188f4b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/login",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "50266866-2cf6fd31-e5c6-45ce-9700-9ed5dd5b2c8f"
+		},
+		{
+			"name": "ProgramBatch",
+			"item": [
+				{
+					"name": "New Request",
+					"id": "50266866-b2005e00-f369-418c-a1aa-c9d4d4d900a6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/batches",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"batches"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "50266866-f85c4891-0325-4ae8-82f5-dc62fe214825"
+		}
+	],
+	"variable": [
+		{
+			"key": "authToken",
+			"value": ""
+		}
+	]
+}
