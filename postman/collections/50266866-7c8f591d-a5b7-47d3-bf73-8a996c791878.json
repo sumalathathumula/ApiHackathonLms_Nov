@@ -76,7 +76,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "CreateNewBatch",
 					"id": "50266866-9bf8249c-dfa9-4f06-a504-8a9ee2c6e5ca",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
