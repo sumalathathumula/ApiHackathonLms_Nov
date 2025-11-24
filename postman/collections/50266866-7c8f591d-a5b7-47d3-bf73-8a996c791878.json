@@ -10,6 +10,27 @@
 			"item": [
 				{
 					"name": "UserSignIn",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "50332b34-fe40-432a-a384-f98e1eaf8003",
+								"exec": [
+									"const responseBody = pm.response.json();\r",
+									"    if (responseBody.token) {\r",
+									"        pm.collectionVariables.set(\"authToken\", responseBody.token);\r",
+									"        console.log(\"Token successfully set in collection level:\", responseBody.token);\r",
+									"    } else {\r",
+									"        console.warn(\"Token not found in response for valid scenario.\");\r",
+									"    }\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50266866-502608f5-9b82-44af-bfbe-7605b6188f4b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -17,6 +38,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"ApiHackathon@6\",\r\n    \"userLoginEmailId\": \"team6@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{BaseUrl}}/login",
 							"host": [
@@ -82,8 +112,31 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"batchDescription\":\r\n\"SDET Automation Batch\",\r\n\"batchName\": \"SDET1\",\r\n\"batchNoOfClasses\": 10,\r\n\"batchStatus\": \"Active\",\r\n\"programId\": 0\r\n}"
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/batches",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"batches"
+							]
+						}
 					},
 					"response": []
 				}
