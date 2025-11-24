@@ -14,7 +14,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "50332b34-fe40-432a-a384-f98e1eaf8003",
+								"id": "c38afd18-68e7-4b7a-94ac-aa402d9dc6a2",
 								"exec": [
 									"const responseBody = pm.response.json();\r",
 									"    if (responseBody.token) {\r",
@@ -22,8 +22,7 @@
 									"        console.log(\"Token successfully set in collection level:\", responseBody.token);\r",
 									"    } else {\r",
 									"        console.warn(\"Token not found in response for valid scenario.\");\r",
-									"    }\r",
-									""
+									"    }"
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -61,6 +60,64 @@
 				}
 			],
 			"id": "50266866-2cf6fd31-e5c6-45ce-9700-9ed5dd5b2c8f"
+		},
+		{
+			"name": "Program",
+			"item": [
+				{
+					"name": "GetAllPrograms",
+					"id": "50266866-2c9cca8f-2dd4-470d-8331-025c6cb36251",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/allPrograms",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"allPrograms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "50266866-6e2d9770-7dfd-4e85-9fa4-8e46156adfcf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "50266866-ba11ad57-55ba-40d5-a576-06e1b228c1e3"
 		},
 		{
 			"name": "ProgramBatch",
@@ -126,7 +183,12 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"batchDescription\":\r\n\"SDET Automation Batch\",\r\n\"batchName\": \"SDET1\",\r\n\"batchNoOfClasses\": 10,\r\n\"batchStatus\": \"Active\",\r\n\"programId\": 0\r\n}"
+							"raw": "{\r\n\"batchDescription\":\r\n\"SDET Automation Batch\",\r\n\"batchName\": \"SDET1\",\r\n\"batchNoOfClasses\": 10,\r\n\"batchStatus\": \"Active\",\r\n\"programId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "{{BaseUrl}}/batches",
@@ -142,11 +204,6 @@
 				}
 			],
 			"id": "50266866-f85c4891-0325-4ae8-82f5-dc62fe214825"
-		},
-		{
-			"name": "New Folder",
-			"item": [],
-			"id": "50266866-ba11ad57-55ba-40d5-a576-06e1b228c1e3"
 		}
 	],
 	"variable": [
