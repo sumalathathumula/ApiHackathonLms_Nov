@@ -19,27 +19,6 @@
 			"name": "ProgramBatch",
 			"item": [
 				{
-					"name": "UserSignIn",
-					"id": "50266866-502608f5-9b82-44af-bfbe-7605b6188f4b",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{BaseUrl}}/login",
-							"host": [
-								"{{BaseUrl}}"
-							],
-							"path": [
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "GetAllBatches",
 					"id": "50266866-b2005e00-f369-418c-a1aa-c9d4d4d900a6",
 					"protocolProfileBehavior": {
@@ -93,6 +72,27 @@
 				}
 			],
 			"id": "50266866-f85c4891-0325-4ae8-82f5-dc62fe214825"
+		},
+		{
+			"name": "UserSignIn",
+			"id": "50266866-502608f5-9b82-44af-bfbe-7605b6188f4b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/login",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"variable": [
