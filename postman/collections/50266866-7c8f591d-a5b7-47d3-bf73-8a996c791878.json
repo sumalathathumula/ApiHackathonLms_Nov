@@ -10,6 +10,26 @@
 			"item": [
 				{
 					"name": "UserSignIn",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c38afd18-68e7-4b7a-94ac-aa402d9dc6a2",
+								"exec": [
+									"const responseBody = pm.response.json();\r",
+									"    if (responseBody.token) {\r",
+									"        pm.collectionVariables.set(\"authToken\", responseBody.token);\r",
+									"        console.log(\"Token successfully set in collection level:\", responseBody.token);\r",
+									"    } else {\r",
+									"        console.warn(\"Token not found in response for valid scenario.\");\r",
+									"    }"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50266866-502608f5-9b82-44af-bfbe-7605b6188f4b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -17,6 +37,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"ApiHackathon@6\",\r\n    \"userLoginEmailId\": \"team6@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{BaseUrl}}/login",
 							"host": [
