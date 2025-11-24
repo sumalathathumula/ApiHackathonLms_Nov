@@ -36,7 +36,7 @@
 			"name": "Program",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "GetAllPrograms",
 					"id": "50266866-2c9cca8f-2dd4-470d-8331-025c6cb36251",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
